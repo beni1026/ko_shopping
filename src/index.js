@@ -7,7 +7,7 @@ import {BrowserRouter, Link} from 'react-router-dom';
 
 ReactDOM.render(
   <React.StrictMode>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter basename="/ko_shopping">
           <App />
       </BrowserRouter>
   </React.StrictMode>,
