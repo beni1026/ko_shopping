@@ -17,14 +17,9 @@ class App extends Component {
                 <Route path="/basket" element={<Basket />} />
             </Routes>
 
-
         </div>
     );
   }
 }
-
-
-
-
 
 export default App;
