@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "https://beni1026.github.io/ko_shopping/static/css/main.073c9b0a.css",
-    "main.js": "https://beni1026.github.io/ko_shopping/static/js/main.d6866e8a.js",
+    "main.js": "https://beni1026.github.io/ko_shopping/static/js/main.2de1000f.js",
     "static/js/787.d502580c.chunk.js": "https://beni1026.github.io/ko_shopping/static/js/787.d502580c.chunk.js",
     "index.html": "https://beni1026.github.io/ko_shopping/index.html",
     "main.073c9b0a.css.map": "https://beni1026.github.io/ko_shopping/static/css/main.073c9b0a.css.map",
-    "main.d6866e8a.js.map": "https://beni1026.github.io/ko_shopping/static/js/main.d6866e8a.js.map",
+    "main.2de1000f.js.map": "https://beni1026.github.io/ko_shopping/static/js/main.2de1000f.js.map",
     "787.d502580c.chunk.js.map": "https://beni1026.github.io/ko_shopping/static/js/787.d502580c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.073c9b0a.css",
-    "static/js/main.d6866e8a.js"
+    "static/js/main.2de1000f.js"
   ]
 }
