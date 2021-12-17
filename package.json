@@ -10,7 +10,7 @@
     "react-dom": "^17.0.2",
     "react-scripts": "5.0.0",
     "web-vitals": "^2.1.2",
-    "homepage": "http://beni1026.github.io/ko_shopping"
+    "homepage": "https://beni1026.github.io/ko_shopping"
   },
   "scripts": {
     "start": "react-scripts start",

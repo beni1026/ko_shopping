@@ -12,7 +12,7 @@ class App extends Component {
     return (
         <div>
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route exact path="/" element={<Home />} />
                 <Route path="/detail" element={<Detail />} />
                 <Route path="/basket" element={<Basket />} />
             </Routes>
