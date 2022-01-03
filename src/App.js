@@ -2,28 +2,25 @@ import './App.css';
 import Home from './pages/Home.js';
 import Detail from './pages/Detail.js';
 import Basket from './pages/Basket.js';
-import {Link, Route, Routes} from 'react-router-dom';
-import {Component} from "react";
+import {BrowserRouter, Route, Routes} from 'react-router-dom';
+import React, {Component} from "react";
+import Header from "./components/Header";
 
 
 
 class App extends Component {
-  render() {
-    return (
-        <div>
-            <Routes>
-                <Route exact path="/" element={<Home />} />
-                <Route path="/detail" element={<Detail />} />
-                <Route path="/basket" element={<Basket />} />
-            </Routes>
-
-            <Link to="/">  홈 </Link> <br/>
-            <Link to="/detail"> 디테일페이지 </Link> <br/>
-            <Link to="/basket"> 장바구니페이지</Link>
-
-        </div>
-    );
-  }
+    render() {
+        return (
+            <BrowserRouter basename="/ko_shopping">
+                <Header />
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/basket' element={<Basket />} />
+                    <Route path='/detail' element={<Detail />} />
+                </Routes>
+            </BrowserRouter>
+        );
+    }
 }
 
 export default App;
