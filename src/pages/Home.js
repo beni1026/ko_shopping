@@ -1,55 +1,78 @@
-import React, {Component, useState} from 'react';
+import React, {Component, useEffect, useState} from 'react';
 import axios from "axios";
 import Header from '../components/Header';
 import styled from 'styled-components';
-
-const data = axios.get("https://144c2df3-3f18-4395-9ba5-b4962256fab7.mock.pstmn.io/themes/popular");
+import Itemlist from "../components/Itemlist";
 
 class Home extends Component {
+    state={
+        themeList : [],
+    };
+
+    getItem=async()=>{
+        let themeList=await axios.get("https://144c2df3-3f18-4395-9ba5-b4962256fab7.mock.pstmn.io/themes/popular");
+        themeList=themeList.data.themes;
+        console.log(JSON.stringify(themeList));
+        this.setState({themeList});
+    };
+
+
+    componentDidMount(){
+        console.log('in componentDidMount');
+        this.getItem();
+    }
+
     render() {
+        let name= this.state.themeList.map((themes)=>{
+            return themes.name;
+        });
         return (
             <div>
-                <Header></Header>
                 <HomeWrap>
                     <Content>
-                        <MainText>{}</MainText>
+                        <MainText>{name[0]}</MainText>
                     </Content>
                     <Content>
-                        <MainText>{}</MainText>
+                        <MainText>{name[1]}</MainText>
                     </Content>
                     <Content>
-                        <MainText>{}</MainText>
+                        <MainText>{name[2]}</MainText>
                     </Content>
                 </HomeWrap>
+                <Itemlist></Itemlist>
             </div>
         );
     }
 }
 const HomeWrap = styled.main`
   display: flex;
-  gap: 8px;
-  padding:64px 0px;
+  gap: 9px;
+  padding:60px 20px;
   justify-content:center;
-  @media ${(props) => props.theme.tablet} {
-    width: 100%;
-    margin: 0 auto;
-  }
+  box-shadow: 0px 8px #EEEEEE;
 `;
+
 const Content=styled.div`
-min-width: 100px;
-width: 200px;
-padding:24px;
-background: rgba(0, 0, 0, 0.5);
-border-radius: 10px;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  min-width: 100px;
+  width: 250px;
+  padding:50px 25px;
+  /*아래는 클릭했을때
+  border: 1px solid #000000;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+  */
 `;
 
 const MainText=styled.div`
-line-height: 26px;
-/* identical to box height, or 130% */
-display: flex;
-justify-content: center;
-align-items: center;
-letter-spacing: -0.01em;
+  font-family: Noto Sans CJK KR;
+  font-size: 20px;
+  color: white;
+  line-height: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  letter-spacing: -0.01em;
 `;
 
 export default Home;
