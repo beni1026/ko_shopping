@@ -13,7 +13,7 @@ class Itemlist extends Component {
 
     getItem=async()=>{
         // eslint-disable-next-line react/prop-types
-        let productList=await axios.get("https://144c2df3-3f18-4395-9ba5-b4962256fab7.mock.pstmn.io/themes/1/products");
+        let productList=await axios.get("https://144c2df3-3f18-4395-9ba5-b4962256fab7.mock.pstmn.io/themes/products");
         productList=productList.data.products;
         console.log(JSON.stringify(productList));
         this.setState({productList});
@@ -39,28 +39,24 @@ class Itemlist extends Component {
         });
         return (
             <div>
-                {/* eslint-disable-next-line react/prop-types */}
-                <h3>{this.props.num}</h3>
                 <ListWrap>
                     <Link to="/Detail">
-                        <img src={img[num]} width="80%" />
-                        <MainText>{name[num]}</MainText>
-                        <SubText>{desc[num]}</SubText>
-                    </Link>
+                        <img src={img[num]} width="100%" /></Link>
+                    <MainText>{name[num]}</MainText>
+                    <SubText>{desc[num]}</SubText>
+
                 </ListWrap>
                 <ListWrap>
                     <Link to="/Detail">
-                        <img src={img[num+1]} width="80%" />
-                        <MainText>{name[num+1]}</MainText>
-                        <SubText>{desc[num+1]}</SubText>
-                    </Link>
+                        <img src={img[num+1]} width="100%" /></Link>
+                    <MainText>{name[num+1]}</MainText>
+                    <SubText>{desc[num+1]}</SubText>
                 </ListWrap>
                 <ListWrap>
                     <Link to="/Detail">
-                        <img src={img[num+2]} width="80%" />
-                        <MainText>{name[num+2]}</MainText>
-                        <SubText>{desc[num+2]}</SubText>
-                    </Link>
+                        <img src={img[num+2]} width="100%" /></Link>
+                    <MainText>{name[num+2]}</MainText>
+                    <SubText>{desc[num+2]}</SubText>
                 </ListWrap>
             </div>
         );
@@ -71,16 +67,18 @@ const ListWrap = styled.main`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 60px 0px;
+  text-align: left;
+  padding: 60px 20%;
 `;
 const MainText = styled.main`
   font-weight: bold;
   font-size: 20px;
   margin-top: 20px;
+  text-align: left;
 `;
 const SubText = styled.main`
-  text-align: left;
   font-size: 16px;
+  text-align: left;
 `;
 
 export default Itemlist;
