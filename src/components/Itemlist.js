@@ -31,38 +31,43 @@ class Itemlist extends Component {
             return products.thumbnail;
         });
         return (
-            <ListWrap>
-                <ImgBox><img src={img[0]} width='100%' /></ImgBox>
-                <MainText>{name[0]}</MainText>
-                <SubText>{desc[0]}</SubText>
-            </ListWrap>
+            <div>
+                <ListWrap>
+                    <img src={img[0]} width="80%" />
+                    <MainText>{name[0]}</MainText>
+                    <SubText>{desc[0]}</SubText>
+                </ListWrap>
+                <ListWrap>
+                    <img src={img[1]} width="80%" />
+                    <MainText>{name[1]}</MainText>
+                    <SubText>{desc[1]}</SubText>
+                </ListWrap>
+                <ListWrap>
+                    <img src={img[2]} width="80%" />
+                    <MainText>{name[2]}</MainText>
+                    <SubText>{desc[2]}</SubText>
+                </ListWrap>
+            </div>
         );
     }
 }
 const ListWrap = styled.main`
   display: flex;
+  text-align: left;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  
   padding: 60px 0px;
 `;
 const MainText = styled.main`
-  text-align: left;
   font-weight: bold;
   font-size: 20px;
+  margin-top: 20px;
 `;
 const SubText = styled.main`
   text-align: left;
   font-size: 16px;
-`;
-
-const ImgBox = styled.main`
-  width: 80%;
-`;
-
-const img = styled.main`
-  height: 20%;
-  object-fit: fill;
 `;
 
 export default Itemlist;
